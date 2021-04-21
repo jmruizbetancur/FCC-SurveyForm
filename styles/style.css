@@ -1,0 +1,517 @@
+:root {
+  --primary-color: #141470;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body,
+body.end {
+  background: rgb(247, 200, 60);
+  background-image: linear-gradient(
+      346deg,
+      rgba(247, 200, 60, 1) 0%,
+      rgba(249, 214, 88, 1) 100%
+    )
+    url(../img/unrecognizable-man-shows-like-gesture-through-torn-yellow-wall-keeps-thumb-up.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 28% 38%;
+  font-family: "Montserrat", sans-serif;
+  min-height: 100vh;
+}
+
+body.start {
+  background-image: unset;
+  background-repeat: unset;
+  background-position: unset;
+  background: rgb(247, 200, 60);
+  background: linear-gradient(
+    346deg,
+    rgba(247, 200, 60, 1) 0%,
+    rgba(249, 214, 88, 1) 100%
+  );
+}
+
+body.start::after {
+  content: "";
+  background: rgba(247, 200, 60, 0.6);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+body::after {
+  content: "";
+  background: rgba(247, 200, 60, 0.6);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+body * {
+  z-index: 1;
+}
+
+@media screen and (min-width: 1330px) {
+  body::after {
+    background: unset;
+    content: unset;
+    position: unset;
+  }
+}
+
+a {
+  text-decoration: underline;
+  color: var(--color-primary);
+  cursor: pointer;
+}
+
+.visually-hidden {
+  border: 0;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.container {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+body.start.container {
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 1200px) {
+  .container {
+    margin: unset;
+    margin-left: auto;
+  }
+}
+
+.box {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 90vh;
+  overflow: auto;
+}
+
+.btn {
+  background: transparent;
+  border: 3px solid var(--primary-color);
+  color: var(--primary-color);
+  width: max-content;
+  text-transform: uppercase;
+  cursor: pointer;
+  padding: 1rem 5rem;
+  font-size: 1.5rem;
+  margin: 2rem;
+  font-weight: 500;
+}
+
+.btn i {
+  margin-left: 3rem;
+}
+
+.btn:focus,
+.btn:hover {
+  transform: scale(0.8);
+}
+
+.btn--big {
+  padding: 2.5rem 5rem;
+  font-size: 2.5rem;
+  margin: 3rem;
+}
+
+@media screen and (min-width: 768px) {
+  .btn {
+    font-size: 2rem;
+  }
+
+  .btn--big {
+    font-size: 4rem;
+  }
+}
+
+.header__description {
+  color: var(--primary-color);
+  font-family: "Architects Daughter", cursive;
+  font-size: 6.5rem;
+  text-align: center;
+  margin: 3rem;
+  margin-bottom: 0;
+}
+
+@media screen and (min-width: 768px) {
+  .header__description {
+    font-size: 10rem;
+    width: 70%;
+  }
+}
+
+/* Progress bar */
+.progressbar__container {
+  width: 70%;
+  margin: 2.8rem 0;
+  display: flex;
+  align-items: flex-start;
+  padding: 2.5rem 0 0 0;
+}
+
+.progressbar {
+  width: 100%;
+  transform: translateX(10%);
+}
+
+.progressbar__step {
+  width: 25%;
+  position: relative;
+  float: left;
+}
+
+.progressbar__step span {
+  background-color: #888;
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.progressbar__step::after {
+  content: "";
+  height: 5px;
+  width: 100%;
+  background-color: #888;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 2.4rem;
+}
+.progressbar__step:last-child::after {
+  content: unset;
+  height: unset;
+  width: unset;
+  background-color: unset;
+}
+
+.progressbar__step.active span,
+.progressbar__step.active::after {
+  background-color: var(--primary-color);
+}
+
+/* Form */
+.form {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 2%;
+  flex-grow: 2;
+}
+
+.form__btn {
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+.form__btn--back {
+  order: -1;
+}
+
+.form__btn:hover,
+.form__btn:focus {
+  text-shadow: 0 0.8rem 0.5rem rgba(0, 0, 0, 0.3);
+  transform: scale(0.8);
+  /* box-shadow: -0.5rem rgba(0, 0, 0, 0.3); */
+}
+
+.form__section {
+  display: flex;
+  flex-direction: column;
+}
+
+.form__section__description {
+  color: var(--primary-color);
+  font-family: "Architects Daughter", cursive;
+  font-size: 3.5rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+@media screen and (min-width: 768px) {
+  .form__section__description {
+    font-size: 5.5rem;
+    margin-bottom: 3rem;
+  }
+}
+
+.input__group {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.input {
+  width: 100%;
+  font-size: 1.5rem;
+  margin: 0.5rem auto;
+}
+
+@media screen and (min-width: 768px) {
+  .input {
+    padding: 0 2.5rem;
+    font-size: 2rem;
+  }
+}
+
+.input--centered {
+  text-align: center;
+}
+
+@media screen and (orientation: landscape) and (max-width: 700px) {
+  .input--centered {
+    text-align: start;
+  }
+}
+
+.input label,
+.input p {
+  display: block;
+  text-transform: uppercase;
+  color: var(--primary-color);
+  font-weight: 500;
+  cursor: none;
+  margin-bottom: 1rem;
+}
+
+.input input {
+  border-bottom: 2px solid var(--primary-color);
+  width: 100%;
+  color: #333;
+  padding-top: 1.5rem;
+  cursor: text;
+}
+
+.input input::placeholder {
+  color: transparent;
+}
+
+.input input:focus,
+.input--select select:focus,
+.input input:hover,
+.input--select select:hover {
+  box-shadow: 0 0.8rem 0.5rem -0.5rem rgba(0, 0, 0, 0.3);
+}
+
+@media screen and (min-width: 768px) {
+  .input label,
+  .input p {
+    margin-bottom: 2.5rem;
+  }
+}
+
+/* input select */
+.input--select {
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+.input--select label {
+  display: inline-block;
+  margin: 0;
+  padding: 1.25rem 0;
+}
+
+.input--select select {
+  padding: 1.25rem 0;
+  border-bottom: 2px solid var(--primary-color);
+  color: #333;
+  text-align: center;
+  background: url(http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png)
+    100% 50% no-repeat transparent;
+}
+
+/* Input number */
+input[type="number"] {
+  appearance: textfield;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  appearance: none;
+  margin: 0;
+}
+
+/* Radio input */
+.input__radio-group {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.input__radio-group label {
+  display: flex;
+  flex-direction: column-reverse;
+  text-align: center;
+  font-size: 1.2rem;
+  margin: 0 1rem;
+  font-weight: normal;
+}
+
+.input__radio-group input {
+  margin-top: 0.5rem;
+  cursor: pointer;
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+@media screen and (min-width: 768px) {
+  .input__radio-group input {
+    width: 1.8rem;
+    height: 1.8rem;
+  }
+}
+
+/* Checkbox input */
+.input.input__checkbox-group {
+  width: max-content;
+}
+
+.input__checkbox-group input {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 3rem;
+  cursor: pointer;
+}
+
+.input__radio-group input:hover,
+.input__radio-group input:focus,
+.input__checkbox-group input:hover,
+.input__checkbox-group input:focus {
+  transform: scale(0.8);
+}
+
+.input__checkbox-group label {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+@media screen and (min-width: 400px) {
+  .input__radio-group {
+    max-width: 80%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .input__radio-group label,
+  .input__checkbox-group label {
+    font-size: 2rem;
+  }
+}
+
+/* textarea */
+textarea {
+  background-color: rgba(255, 255, 255, 0.3);
+  width: 100%;
+  flex-grow: 1;
+  padding: 2rem;
+  text-align: start;
+  resize: none;
+}
+
+textarea:focus,
+textarea:hover {
+  box-shadow: 0.8rem 0.8rem 0.5rem -0.5rem rgba(0, 0, 0, 0.3);
+}
+
+textarea:focus::placeholder {
+  color: transparent;
+}
+
+#submit {
+  margin: 1rem auto 0;
+}
+@media screen and (min-width: 768px) {
+  #submit {
+    margin: 2rem auto 0;
+  }
+}
+
+/* Footer */
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 10vh;
+  width: max-content;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  width: 100%;
+}
+
+.footer__year,
+.footer__author {
+  display: block;
+  font-size: 1rem;
+  text-align: center;
+  margin: 0.2rem;
+}
+
+#credits {
+  margin: 0.2rem;
+  display: block;
+  text-align: end;
+  text-decoration: none;
+}
+
+@media screen and (min-width: 768px) {
+  .footer__year,
+  .footer__author {
+    font-size: 1.2rem;
+  }
+
+  #credits {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+  }
+}
+
+/* These class should be at the end */
+.hidden,
+#credits.hidden {
+  display: none;
+}
+
+.invisible {
+  opacity: 0;
+}

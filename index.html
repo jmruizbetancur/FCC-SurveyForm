@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/9cfaf2e33c.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/destyle.css">
+    <link rel="stylesheet" href="./styles/style.css">
+    <title>Survey Form FCC</title>
+</head>
+<body class="container">
+    <header class='box'>
+        <h1 id="title" class="visually-hidden">Satisfaction Survey Form</h1>
+        <p id="description" class="header__description">Your feedback is important for us!</p>
+        <button class="btn btn--big" id="start">Let's start <i class="fas fa-arrow-right"></i></button>
+    </header>
+    <div class="box hidden">
+        <!-- Progress bar -->
+        <div class="progressbar__container">
+            <ul class="progressbar">
+                <li class="progressbar__step" aria-hidden="true"><span>1</span></li>
+                <li class="progressbar__step" aria-hidden="true"><span>2</span></li>
+                <li class="progressbar__step" aria-hidden="true"><span>3</span></li>
+                <li class="progressbar__step" aria-hidden="true"><span>4</span></li>
+            </ul>
+        </div>
+        <!-- Form -->
+        <form id="survey-form" class="form">
+            <!-- Step 1 -->
+            <fieldset class="form__section">
+                <p class="form__section__description">Tell us a little about you...</p>
+                <div class="input__group">
+                    <div class="input">
+                        <label for="name" id="name-label">Name</label>
+                        <input type="text" name="name" id="name" placeholder="e.g. John Doe"  required>
+                    </div>
+                    <div class="input">
+                        <label for="email" id="email-label">Email</label>
+                        <input type="email" name="email" id="email" placeholder="e.g. johndoe@holamundo.com" required>
+                    </div>
+                    <div class="input">
+                        <label for="age" id="number-label">Age</label>
+                        <input type="number" name="age" id="number" min="1" max="110" placeholder="e.g. 35">
+                    </div>
+                    <div class="input input--select">
+                        <label for="gender">Gender</label>
+                        <select name="gender" id="dropdown">
+                            <option value="" disabled selected>Choose one...</option>
+                            <option value="Male">Male</option>
+                            <option value="Male">Female</option>
+                            <option value="Male">Non-binary</option>
+                            <option value="Male">Rather not to say</option>
+                        </select>
+                    </div>
+                </div>
+            </fieldset>
+            <!-- Step 2 -->
+            <fieldset class="form__section hidden">
+                <p class="form__section__description">On a scale from 0 to 5 tell us...</p>
+                <div class="input__group">
+                    <div class="input input--centered">
+                        <p >Your satisfaction with our course</p>
+                        <div class="input input__radio-group">
+                            <label><input type="radio" name="satisfaction" value="0">0</label>
+                            <label><input type="radio" name="satisfaction" value="1">1</label>
+                            <label><input type="radio" name="satisfaction" value="2">2</label>
+                            <label><input type="radio" name="satisfaction" value="3">3</label>
+                            <label><input type="radio" name="satisfaction" value="4">4</label>
+                            <label><input type="radio" name="satisfaction" value="5">5</label>
+                        </div>   
+                    </div>
+                    <div class="input input--centered">
+                        <p>How likely are you to purchase another course from us</p>
+                        <div  class="input input__radio-group">
+                            <label><input type="radio" name="purchase" value="0">0</label>
+                            <label><input type="radio" name="purchase" value="1">1</label>
+                            <label><input type="radio" name="purchase" value="2">2</label>
+                            <label><input type="radio" name="purchase" value="3">3</label>
+                            <label><input type="radio" name="purchase" value="4">4</label>
+                            <label><input type="radio" name="purchase" value="5">5</label>
+                        </div>
+                    </div>
+                    <div class="input input--centered">
+                        <p>How likely are you to recommend our courses to others</p>
+                        <div  class="input input__radio-group">
+                            <label><input type="radio" name="recommend" value="0">0</label>
+                            <label><input type="radio" name="recommend" value="1">1</label>
+                            <label><input type="radio" name="recommend" value="2">2</label>
+                            <label><input type="radio" name="recommend" value="3">3</label>
+                            <label><input type="radio" name="recommend" value="4">4</label>
+                            <label><input type="radio" name="recommend" value="5">5</label>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+            <!-- Step 3 -->
+            <fieldset class="form__section hidden">
+                <p class="form__section__description">Which topics would you like us to have with advance courses?</p>
+                <div class="input input__group input__checkbox-group">
+                    <label><input type="checkbox" name="improve" value="html">HTML</label>
+                    <label><input type="checkbox" name="improve" value="css">CSS</label>
+                    <label><input type="checkbox" name="improve" value="js">JavaScript</label>
+                    <label><input type="checkbox" name="improve" value="react">React</label>
+                    <label><input type="checkbox" name="improve" value="node">Node</label>
+                    <label><input type="checkbox" name="improve" value="mongo">Mongodb</label>                        
+                </div>
+            </fieldset>
+            <!-- Step 4 -->
+            <fieldset class="form__section hidden">
+                <p class="form__section__description">What else would you like us to know...</p>
+                <div class="input__group input input--centered">
+                    <textarea placeholder="Write your comments and suggestions" ></textarea>
+                    <button id="submit" class="btn">SEND <i class="fas fa-paper-plane"></i></button>
+                </div>       
+            </fieldset>
+    
+            <button class="form__btn form__btn--back"><i class="fas fa-chevron-left fa-5x"></i></button>
+            <button class="form__btn form__btn--next"><i class="fas fa-chevron-right fa-5x"></i></button>
+            
+        </form>
+        
+    </div>
+    <footer>
+        <div>
+            <small class="footer__author"><a href="https://www.freecodecamp.org/" class="link" target="_blank">FreeCodeCamp</a> - Survey Form Project</small>
+            <small class="footer__year"><strong>JMRuiz - 2020</strong></small>
+            <small id="credits">Hand photo created by wayhomestudio - <a href="https://www.freepik.com/photos/hand" target="_blank">www.freepik.com</a></small>
+        </div>
+        
+    </footer>
+    
+    <script src="./js/survey.js"></script>
+</body>
+</html>
